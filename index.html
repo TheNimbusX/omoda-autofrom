@@ -6,14 +6,19 @@
     <link rel="icon" href="./images/favicon.ico" sizes="any" />
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" /> 
     <link rel="apple-touch-icon" href="./images/favicon.png" /> 
+    <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="/bower_components/owl.carousel/dist/assets/owl.carousel.min.css" /> 
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/popups.css">
     <title>Omoda Автофром</title>
-  </head>
-
-  <body>
+  </head>  
+  <body>   
     <header class="header">
       <div class="header__information">
         <div class="header__left-side">
@@ -46,11 +51,27 @@
             <a href="+79999999999" class="telephone-number">
               +7 (999) 999 - 99 - 99
             </a>
-          </address>
-          <div class="menu">
-            <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
-            <label for="burger-checkbox" class="burger"></label>          
-          </div>
+          </address>          
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar__wrap">
+                <div class="hamb">
+                  <div class="hamb__field" id="hamb">
+                    <span class="bar"></span> <span class="bar"></span>
+                    <span class="bar"></span>
+                  </div>
+                </div>
+                <ul class="menu" id="menu">
+                  <li><a href="#model-range" class="header__nav-item">модельный ряд</a></li>
+                  <li><a href="#complectations" class="header__nav-item">комплектации</a></li>
+                  <li><a href="#credit-section" class="header__nav-item">кредит</a></li>
+                  <li><a href="#tradein-section" class="header__nav-item">trade-in</a></li>
+                  <li><a href="#contacts-section" class="header__nav-item">контакты</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="popup" id="popup"></div>
           <button 
             type="button" 
             onclick="window['dialog-recall'].showModal()"
@@ -65,11 +86,11 @@
       </div>
       <div class="header__navigation-wrapper">
         <nav class="header__nav">
-          <a href="" class="header__nav-item">модельный ряд</a>
-          <a href="" class="header__nav-item">комплектации</a>
-          <a href="" class="header__nav-item">кредит</a>
-          <a href="" class="header__nav-item">trade-in</a>
-          <a href="" class="header__nav-item">контакты</a>
+          <a href="#model-range" class="header__nav-item">модельный ряд</a>
+          <a href="#complectations" class="header__nav-item">комплектации</a>
+          <a href="#credit-section" class="header__nav-item">кредит</a>
+          <a href="#tradein-section" class="header__nav-item">trade-in</a>
+          <a href="#contacts-section" class="header__nav-item">контакты</a>
         </nav>
       </div>
     </header>
@@ -171,91 +192,125 @@
           </p>
         </div>
       </section>
-      <section class="section__model-range">
+      <section class="section__model-range" id="model-range">
         <h3 class="section__model-range-title">модельный ряд</h3>
         <div class="section__model-range-cards">
           <div class="model-range-card card">
             <h3 class="model-range-card-title">omoda c5</h3>
             <div class="model-range-card-left-side">
-              <img
-                src="./images/c5.png"
-                alt="Omoda C5"
-                class="model-range-card-image"
-              />
-              <img
-                src="./images/mobile/card-img1-mob.png"
-                alt="Omoda C5"
-                class="model-range-card-image-mob"
-              />
-              <div class="model-choose-color">
-                <fieldset>
-                  <label class="color-label">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="white"
-                      checked="checked"
-                    /><span></span>
-                  </label>
-                  <label class="color-label">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="light-blue"
-                    /><span></span>
-                  </label>
-                  <label class="color-label">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="light-green"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="light-brown"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="blue"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="dark-grey"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="black"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="red"
-                    /><span></span>
-                  </label>
-                </fieldset>
-              </div>
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/c5.png"
+                    alt="Omoda C5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda C5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/c5-blue.png"
+                    alt="Omoda C5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda C5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/c5-green.png"
+                    alt="Omoda C5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda C5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/c5-brown.png"
+                    alt="Omoda C5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda C5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/c5-dark-blue.png"
+                    alt="Omoda C5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda C5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/c5-grey.png"
+                    alt="Omoda C5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda C5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/c5-black.png"
+                    alt="Omoda C5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda C5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/c5-red.png"
+                    alt="Omoda C5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda C5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+
             </div>
             <div class="model-range-card-right-side">
               <ul class="model-range-card-ul">
@@ -306,85 +361,91 @@
           <div class="model-range-card card">
             <h3 class="model-range-card-title">omoda s5</h3>
             <div class="model-range-card-left-side">
-              <img
-                src="./images/s5.png"
-                alt="Omoda S5"
-                class="model-range-card-image padding-image"
-              />
-              <img
-                src="./images/mobile/card-img2-mob.png"
-                alt="Omoda S5"
-                class="model-range-card-image-mob"
-              />
-              <div class="model-choose-color">
-                <fieldset>
-                  <label class="color-label">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="white"
-                      checked="checked"
-                    /><span></span>
-                  </label>
-                  <label class="color-label">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="light-blue"
-                    /><span></span>
-                  </label>
-                  <label class="color-label">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="light-green"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="light-brown"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="blue"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="dark-grey"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="black"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="red"
-                    /><span></span>
-                  </label>
-                </fieldset>
-              </div>
+              <div class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5 -white.png"
+                    alt="Omoda S5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5 -blue.png"
+                    alt="Omoda S5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5 -grey.png"
+                    alt="Omoda S5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/s5.png"
+                    alt="Omoda S5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5 -red.png"
+                    alt="Omoda S5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5 -steel.png"
+                    alt="Omoda S5"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>                  
+                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
             </div>
             <div class="model-range-card-right-side">
               <ul class="model-range-card-ul">
@@ -435,85 +496,108 @@
           <div class="model-range-card card">
             <h3 class="model-range-card-title">omoda s5gt</h3>
             <div class="model-range-card-left-side">
-              <img
-                src="./images/s5gt.png"
-                alt="Omoda S5GT"
-                class="model-range-card-image padding-top-image"
-              />
-              <img
-                src="./images/mobile/card-img2-mob.png"
-                alt="Omoda S5GT"
-                class="model-range-card-image-mob"
-              />
-              <div class="model-choose-color">
-                <fieldset>
-                  <label class="color-label">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="white"
-                      checked="checked"
-                    /><span></span>
-                  </label>
-                  <label class="color-label">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="light-blue"
-                    /><span></span>
-                  </label>
-                  <label class="color-label">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="light-green"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="light-brown"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="blue"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="dark-grey"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="black"
-                    /><span></span>
-                  </label>
-                  <label class="color-label visually-hidden-mob">
-                    <input
-                      class="color-input visually-hidden"
-                      type="radio"
-                      name="color"
-                      value="red"
-                    /><span></span>
-                  </label>
-                </fieldset>
-              </div>
+              <div class="swiper mySwiper3">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/s5gt.png"
+                    alt="Omoda S5GT"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5GT"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5gt-blue.png"
+                    alt="Omoda S5GT"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5GT"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                     src="./images/colors/s5gt-emerald.png"
+                    alt="Omoda S5GT"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5GT"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5gt-nardo.png"
+                    alt="Omoda S5GT"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5GT"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5gt-red.png"
+                    alt="Omoda S5GT"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5GT"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5gt-steel.png"
+                    alt="Omoda S5GT"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5GT"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>      
+                  <div class="swiper-slide">
+                    <img
+                     id="car-img"
+                    src="./images/colors/s5gt-white.png"
+                    alt="Omoda S5GT"
+                    class="model-range-card-image"
+                    />
+                    <img
+                      src="./images/mobile/card-img1-mob.png"
+                      alt="Omoda S5GT"
+                      class="model-range-card-image-mob"
+                    />
+                  </div>                 
+                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-next">
+              <img src="./images/mobile/swiper-next.png" alt="">
+            </div>
+            <div class="swiper-button-prev">
+              <img src="./images/mobile/swiper-prev.png" alt="">
+            </div>
             </div>
             <div class="model-range-card-right-side">
               <ul class="model-range-card-ul">
@@ -563,7 +647,7 @@
           </div>
         </div>
       </section>
-      <section class="section__complectations">
+      <section class="section__complectations" id="complectations">
         <h3 class="section__complectations-title">комплектации</h3>
         <nav class="section__complectations-nav visually-hidden-mob">
           <ul class="section__complectations-ul">
@@ -571,18 +655,19 @@
               <button
                 type="button"
                 disabled
-                class="section__complectations-button"
+                id="btn1"
+                class="section__complectations-button s5"
               >
                 c5
               </button>
             </li>
             <li class="">
-              <button type="button" class="section__complectations-button">
+              <button type="button" id="btn2" class="section__complectations-button s5">
                 s5
               </button>
             </li>
             <li class="">
-              <button type="button" class="section__complectations-button">
+              <button type="button"  id="btn3" class="section__complectations-button s5gt">
                 s5gt
               </button>
             </li>
@@ -794,7 +879,7 @@
         </div>
       </section>
     </main>
-    <form class="section__tradein">
+    <form class="section__tradein" id="tradein-section">
       <div class="section__tradein-wrapper">
         <h3 class="section__tradein-title">
           выгода до 380 000 ₽ <br />
@@ -877,6 +962,7 @@
           class="form-input input-text"
         />
         <input
+          id="tel"
           type="tel"
           placeholder="+ 7 (_ _ _)___ __ __"
           class="form-input input-tel"
@@ -894,6 +980,7 @@
             id="personal-data"
             class="personal-data"
             required
+            checked
           />
           <label for="personal-data" class="personal-data-text"
             >Я соглашаюсь с условиями
@@ -902,7 +989,7 @@
         </div>
       </div>
     </form>
-    <form class="section__credit">
+    <form class="section__credit" id="credit-section">
       <div class="section__credit-wrapper">
         <h3 class="section__credit-title">улучшим любое <br /></h3>
         <p class="section__credit-title">предложение конкурентов</p>
@@ -910,6 +997,7 @@
           Оставьте заявку и узнайте свою выгоду!
         </p>
         <input
+          id="tel"
           type="tel"
           placeholder="+ 7 (_ _ _)___ __ __"
           class="form-input input-tel credit-input"
@@ -929,6 +1017,7 @@
             id="personal-data"
             class="personal-data"
             required
+            checked
           />
           <label for="personal-data" class="personal-data-text credit-text"
             >Согласная на обработку персональных данных
@@ -936,7 +1025,7 @@
         </div>
       </div>
     </form>
-    <section class="section__contacts">
+    <section class="section__contacts" id="contacts-section">
       <h3 class="section__contacts-title">контакты</h3>
       <div class="section__contacts-wrapper-bg">
         <div class="section__contacts-wrapper">
@@ -1029,16 +1118,13 @@
         </div>
       </div>
     </footer>
-
-    <!-- popups -->
-
     <dialog id="dialog-recall">
       <div class="dialog-bg">
-        <img src="./images/popup/recall-bg.jpg">
+        <img src="./images/popup/recall-bg.jpg" class="visually-hidden-mob">
+        <img src="./images/popup/recall-bg-mob.jpg" class="dialog-bg-img-mob">
       </div>
       <div class="dialog-wrapper">
-        <h4 class="dialog-h2">Оставьте заявку и 
-          <br>мы Вам перезвоним!</h4>
+        <h4 class="dialog-h2">Оставьте заявку и мы Вам перезвоним!</h4>
         <form class="dialog-form" id="form">
           <input type="name" id="name" placeholder="Ваше имя" class="dialog-input" />
           <input type="tel" id="tel" placeholder="Ваш номер телефона" class="dialog-input" />
@@ -1049,13 +1135,19 @@
           <label for="time-input" class="time-input-label">
             <span class="time-input-span">Выбрать удобное время</span>
           </label>         
-          <button type="submit" class="dialog-button">Заказать звонок</button>
+          <button 
+         
+          type="submit" 
+          id="submit-button"
+          class="dialog-button">Заказать звонок</button>
           <div class="personal-data-wrapper-popup">
             <div class="checkbox-custom">
               <label><input type="checkbox"
                 name="personal-data-popup"
                 id="personal-data-popup"
                 class="personal-data-popup"
+                checked
+                required
                 >
                 <b></b>                      
                   </label>
@@ -1080,7 +1172,8 @@
     
     <dialog id="dialog-credit">
       <div class="dialog-bg-credit">
-        <img src="./images/popup/credit-bg.jpg">
+        <img src="./images/popup/credit-bg.jpg" class="visually-hidden-mob">
+        <img src="./images/popup/credit-bg-mob.jpg" class="dialog-bg-img-mob">
       </div>
       <div class="dialog-wrapper">
         <h4 class="dialog-h2">Выгодный автокредит<br>
@@ -1092,13 +1185,16 @@
           <input type="name" id="name" placeholder="Ваше имя" class="dialog-input" />
           <input type="tel" id="tel" placeholder="Ваш номер телефона" class="dialog-input" />
                 
-          <button type="submit" class="dialog-button">Рассчитать кредит</button>
+          <button           
+          type="submit" 
+          class="dialog-button">Рассчитать кредит</button>
           <div class="personal-data-wrapper-popup">
             <div class="checkbox-custom">
               <label><input type="checkbox"
                 name="personal-data-popup"
                 id="personal-data-popup"
                 class="personal-data-popup"
+                checked
                 >
                 <b></b>                      
                   </label>
@@ -1123,7 +1219,8 @@
 
     <dialog id="dialog-tradein">
       <div class="dialog-bg-tradein">
-        <img src="./images/popup/tradein-bg.jpg">
+        <img src="./images/popup/tradein-bg.jpg" class="visually-hidden-mob">
+        <img src="./images/popup/tradein-bg-mob.jpg" class="dialog-bg-img-mob">
       </div>
       <div class="dialog-wrapper">
         <h4 class="dialog-h2">Trade-In в Вашу пользу</h4>
@@ -1133,7 +1230,7 @@
           </p>
         <form class="dialog-form" id="form">
           <input type="name" id="name" placeholder="Ваше имя" class="dialog-input" />
-          <input type="tel" id="tel" placeholder="Ваш номер телефона" class="dialog-input" />
+          <input  type="tel" id="tel" placeholder="Ваш номер телефона" class="dialog-input" />
                 
           <button type="submit" class="dialog-button">Оформить Trade-In</button>
           <div class="personal-data-wrapper-popup">
@@ -1142,6 +1239,7 @@
                 name="personal-data-popup"
                 id="personal-data-popup"
                 class="personal-data-popup"
+                checked
                 >
                 <b></b>                      
                   </label>
@@ -1163,8 +1261,10 @@
         </form>
       </div>
     </dialog>  
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
     <script src="./scripts/script.js"></script>    
   </body>
 </html>

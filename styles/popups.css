@@ -5,7 +5,7 @@ dialog {
   border: none;
   transition: opacity 0.3s ease-in-out;
   max-inline-size: 735px;
-  inline-size: 80%;
+  inline-size: 100%;
   min-inline-size: 250px;
   max-block-size: 400px;
   padding: 0;
@@ -221,17 +221,129 @@ dialog:not([open]) {
 }
 
 .personal-data-text-popup-link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .dialog-paragraph {
-
-font-size: 15px;
-font-weight: 400;
-line-height: 20.43px;
-margin-top: 6px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20.43px;
+  margin-top: 6px;
 }
 
-@media (width < 920px) {
-    
+dialog .done {
+  position: absolute;
+  top: 0;
+  width: 400px;
+  height: 500px;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(255, 0, 0);
+  visibility: hidden;
+}
+
+/* adaptive */ /* adaptive */ /* adaptive */ /* adaptive */ /* adaptive */
+
+.dialog-bg-img-mob {
+  display: none;
+}
+
+@media (width < 770px) {
+  .visually-hidden-mob {
+    display: none;
+  }
+
+  dialog {
+    display: flex;
+    flex-direction: column;
+    max-inline-size: 360px;
+    inline-size: 100%;
+    min-inline-size: 250px;
+    max-block-size: 416px;
+    padding: 0;
+  }
+
+  .dialog-bg-img-mob {
+    display: block;
+  }
+
+  .dialog-bg {
+    max-block-size: 158px;
+  }
+
+  .dialog-wrapper {
+    max-block-size: 258px;
+    padding: 12px 23px 10px;
+  }
+
+  .dialog-h2 {
+    font-size: 18px;
+    line-height: 22.62px;
+  }
+
+  .dialog-input {
+    margin: 0;
+    padding: 7px 0;
+    font-size: 10px;
+    line-height: 13.62px;
+  }
+
+  .dialog-input:nth-child(1) {
+    margin: 0;
+    margin-top: 9px;
+  }
+
+  .dialog-input:nth-child(2) {
+    margin: 0;
+    margin-top: 9px;
+    padding-bottom: 8px;
+  }
+
+  .time-wrapper {
+    margin-top: 12px;
+  }
+
+  .time-button {
+    font-size: 10px;
+    line-height: 13.62px;
+  }
+
+  .time-input {
+    position: relative;
+    opacity: 0;
+    width: 150px;
+    max-height: 14px;
+    font-size: 150px;
+  }
+
+  .time-input-span {
+    font-size: 10px;
+    line-height: 13.62px;
+    bottom: 0px;
+  }
+
+  .time-button {
+    margin: 0;
+  }
+
+  .dialog-button {
+    font-size: 15px;
+    line-height: 20.43px;
+    padding: 14.5px 97.5px;
+    text-wrap: nowrap;
+    margin-top: 10px;
+  }
+  
+  b {
+    margin-bottom: 16px;
+  }
+
+  .personal-data-text-popup {
+    font-size: 7px;
+    line-height: 9.53px;
+  }
+
+  .dialog-close-button {   
+    background-image: url(../images/popup/close-mob.png);
+}
 }

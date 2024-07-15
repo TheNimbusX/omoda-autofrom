@@ -1,5 +1,4 @@
-// функция для кастомного селекта// функция для кастомного селекта// функция для кастомного селекта// функция для кастомного селекта
-
+////////////////////////////////////////////// функция для кастомного селекта
 const customSelect = document.querySelector(".select-wrapper");
 const selectBtn = document.querySelector(".select-button");
 
@@ -106,7 +105,7 @@ optionsListComplectations.forEach((option) => {
 });
 
 
-// таймер// таймер// таймер// таймер// таймер// таймер// таймер// таймер// таймер// таймер// таймер
+////////////////////////////////////////////// таймер
 
 document.addEventListener('DOMContentLoaded', function() {
   // конечная дата
@@ -146,5 +145,160 @@ document.addEventListener('DOMContentLoaded', function() {
   // вызываем функцию countdownTimer каждую секунду
   timerId = setInterval(countdownTimer, 500);
 });
+
+
+
+////////////////////////////////////////////// popups
+
+
+////////////////////////////////////////////// проверка номера телефона
+
+IMask(
+  document.getElementById('tel'),
+  {
+    mask: '+{7}(000)000-00-00'
+  }
+)
+
+////////////////////////////////////////////// бургер меню 
+const hamb = document.querySelector("#hamb");
+const popup = document.querySelector("#popup");
+const body = document.body;
+
+// Клонируем меню, чтобы задать стили для мобильной версии
+const menu = document.querySelector("#menu").cloneNode(1);
+
+hamb.addEventListener("click", hambHandler);
+
+function hambHandler(e) {
+  e.preventDefault();
+  popup.classList.toggle("open");
+  hamb.classList.toggle("active");
+  body.classList.toggle("noscroll");
+  renderPopup();
+}
+
+// Здесь мы рендерим элементы в наш попап
+function renderPopup() {
+  popup.appendChild(menu);
+}
+const links = Array.from(menu.children);
+links.forEach((link) => {
+  link.addEventListener("click", closeOnClick);
+});
+
+// Закрытие попапа при клике на меню
+function closeOnClick() {
+  popup.classList.remove("open");
+  hamb.classList.remove("active");
+  body.classList.remove("noscroll");
+}
+
+//////////////////////////////////////////////  owl carousel 
+
+$(document).ready(function(){
+  $("#slider").owlCarousel();
+});
+
+//////////////////////////////////////////////  swiper
+const swiper = new Swiper('.mySwiper', {
+  direction: 'horizontal',
+  loop: true,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: 'true',
+    horizontalClass: 'swiper-pagination-vertical',
+    dynamicBullets: 'true',
+    dynamicMainBullets: 8,
+     bulletClass: 'swiper-pagination-bullet',
+  },
+
+  breakpoints: {
+    640: {
+      pagination: {        
+        dynamicMainBullets: 3,
+      },
+    },
+    768: {
+      pagination: {
+        
+        dynamicMainBullets: 8,
+      },
+    },
+    1024: {
+      pagination: {
+        
+        dynamicMainBullets: 8,
+      },
+    },
+  },
+  
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    
+},
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  mousewheel: true,
+  keyboard: true,
+});
+
+var swiper2 = new Swiper(".mySwiper2", {
+  direction: 'horizontal',
+  loop: true,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: 'true',
+    horizontalClass: 'swiper-pagination-vertical',
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+},
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  mousewheel: true,
+  keyboard: true,
+});
+
+var swiper3 = new Swiper(".mySwiper3", {
+  direction: 'horizontal',
+  loop: true,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: 'true',
+    horizontalClass: 'swiper-pagination-vertical',
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+},
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  mousewheel: true,
+  keyboard: true,
+});
+
+
+
+
+
+////////////////////////////////////////////// функция смены цвета в карточке автомобиля
+function changeImage(elem) {
+  var imageUrl = elem.getAttribute("image");
+  document.getElementById("car-img").setAttribute("src", imageUrl);
+}
+document.querySelector('[value="white"]').click();
+
+
+
+
 
 
