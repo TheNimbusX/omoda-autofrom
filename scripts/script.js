@@ -115,57 +115,54 @@ optionsListComplectations.forEach((option) => {
 });
 
 ////////////////////////////////////////////// таймер
+let days = document.getElementById('days');
+let hours = document.getElementById('hours');
+let minutes = document.getElementById('minutes');
+let seconds = document.getElementById('seconds');
 
-document.addEventListener("DOMContentLoaded", function () {
-  // конечная дата
-  const deadline = new Date(2024, 07, 01);
-  // id таймера
-  let timerId = null;
-  // склонение числительных
-  function declensionNum(num, words) {
-    return words[
-      num % 100 > 4 && num % 100 < 20
-        ? 2
-        : [2, 0, 1, 1, 1, 2][num % 10 < 5 ? num % 10 : 5]
-    ];
+let dd = document.getElementById('dd');
+let hh = document.getElementById('hh');
+let mm = document.getElementById('mm');
+let ss = document.getElementById('ss');
+
+let countdown = document.getElementById("countdown");
+let wishDays = 10;
+
+let x = setInterval(function () {
+  let currentYear = new Date().getFullYear();
+  let saleEnd = new Date(`Aug 1, ${currentYear + 0} 00:00:00`);
+  let now = new Date().getTime();
+  let distance = saleEnd - now;
+
+  // time calculation
+  let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let s = Math.floor((distance % (1000 * 60)) / (1000));
+
+  // output the result
+  days.innerHTML = d + "<br><span>Дней</span>";
+  hours.innerHTML = h + "<br><span>Часов</span>";
+  minutes.innerHTML = m + "<br><span>Минут</span>";
+  seconds.innerHTML = s + "<span>Секунд</span>";
+
+  // animate stroke
+  dd.style.strokeDashoffset = 440 - (440 * d) / 365;
+  hh.style.strokeDashoffset = 440 - (440 * h) / 24;
+  mm.style.strokeDashoffset = 440 - (440 * m) / 60;
+  ss.style.strokeDashoffset = 440 - (440 * s) / 60;
+
+  // if countdown is over, change the innerText of .text
+  if (distance < 0) {
+    document.querySelector('.text').innerText = `Предложение закончилось${currentYear}`;
   }
-  // вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
-  function countdownTimer() {
-    const diff = deadline - new Date();
-    if (diff <= 0) {
-      clearInterval(timerId);
-    }
-    const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
-    const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
-    const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
-    const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
-    $days.textContent = days < 10 ? "0" + days : days;
-    $hours.textContent = hours < 10 ? "0" + hours : hours;
-    $minutes.textContent = minutes < 10 ? "0" + minutes : minutes;
-    $seconds.textContent = seconds < 10 ? "0" + seconds : seconds;
-    $days.dataset.title = declensionNum(days, ["день", "дня", "дней"]);
-    $hours.dataset.title = declensionNum(hours, ["час", "часа", "часов"]);
-    $minutes.dataset.title = declensionNum(minutes, [
-      "минута",
-      "минуты",
-      "минут",
-    ]);
-    $seconds.dataset.title = declensionNum(seconds, [
-      "секунда",
-      "секунды",
-      "секунд",
-    ]);
-  }
-  // получаем элементы, содержащие компоненты даты
-  const $days = document.querySelector(".days");
-  const $hours = document.querySelector(".hours");
-  const $minutes = document.querySelector(".mins");
-  const $seconds = document.querySelector(".secs");
-  // вызываем функцию countdownTimer
-  countdownTimer();
-  // вызываем функцию countdownTimer каждую секунду
-  timerId = setInterval(countdownTimer, 500);
-});
+}, 1000);
+// animation loop
+function animate() {
+  requestAnimationFrame(animate);
+ 
+}
+animate();
 
 ////////////////////////////////////////////// popups
 

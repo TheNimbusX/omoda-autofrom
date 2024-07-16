@@ -46,7 +46,7 @@
           </a>
         </address>
         <nav class="navbar">
-          <div class="container">
+          <div class="container-burger">
             <div class="navbar__wrap">
               <div class="hamb">
                 <div class="hamb__field" id="hamb">
@@ -98,7 +98,56 @@
         </p>
       </div>
 
-      <div class="header__timer-timer">
+      <div class="container">
+      
+        <div id="countdown">
+          <div class="circle" style="--clr: #000000;">
+            <svg>
+              <circle cx="55" cy="55" r="59"></circle>
+              <circle cx="55" cy="55" r="59" id="dd"></circle>
+            </svg>
+            <div id="days">000<br><span>Дней</span></div>
+          </div>
+      
+          <div class="circle" style="--clr: #000000;">
+            <svg>
+              <circle cx="55" cy="55" r="59"></circle>
+              <circle cx="55" cy="55" r="59" id="hh"></circle>
+            </svg>
+            <div id="hours">00<br><span>Часов</span></div>
+          </div>
+      
+          <div class="circle" style="--clr: #000000;">
+            <svg>
+              <circle cx="55" cy="55" r="59"></circle>
+              <circle cx="55" cy="55" r="59" id="mm"></circle>
+            </svg>
+            <div id="minutes">00<br><span>Минут</span></div>
+          </div>
+      
+          <div class="circle" style="--clr: #000000;">
+            <svg>
+              <circle cx="55" cy="55" r="59"></circle>
+              <circle cx="55" cy="55" r="59" id="ss"></circle>
+            </svg>
+            <div id="seconds">00<br><span>Секунд</span></div>
+          </div>
+        </div>
+      </div>
+  
+      
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <div class="header__timer-timer">
 
         <div class="header__timer-wrapper-anim">
           <div class="header__timer-unit">
@@ -132,7 +181,7 @@
           <div class="animated-time anim-secs"></div>
         </div>
 
-      </div>
+      </div> -->
       <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
         class="header__timer-get-deal-button button open-popup">
         получить предложение
@@ -918,6 +967,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://unpkg.com/imask"></script>
   <script src="./scripts/script.js"></script>
 </body>
