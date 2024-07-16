@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="./styles/popups.css">
     <title>Omoda Автофром</title>
   </head>  
-  <body>   
+  <body>  
+    
+   
     <header class="header">
       <div class="header__information">
         <div class="header__left-side">
@@ -108,6 +110,7 @@
             Успейте получить авгодное предложение
           </p>
         </div>        
+        
       <div class="header__timer-timer"> 
            
           <div class="header__timer-wrapper-anim">      
@@ -677,30 +680,41 @@
       </section>
       <section class="section__complectations" id="complectations">
         <h3 class="section__complectations-title">комплектации</h3>
-        <nav class="section__complectations-nav visually-hidden-mob">
-          <ul class="section__complectations-ul">
-            <li class="section__complectations-list-item">
-              <button
-                type="button"
-                disabled
-                id="btn1"
-                class="section__complectations-button s5"
-              >
-                c5
-              </button>
-            </li>
-            <li class="">
-              <button type="button" id="btn2" class="section__complectations-button s5">
-                s5
-              </button>
-            </li>
-            <li class="">
-              <button type="button"  id="btn3" class="section__complectations-button s5gt">
-                s5gt
-              </button>
-            </li>
-          </ul>
-        </nav>
+
+        <div class="section__complectations-nav visually-hidden-mob">
+          <fieldset class="section__complectations-ul">
+            <label class="section__complectations-list-item">
+              <input 
+              class="section__complectations-button visually-hidden c5"              
+              type="radio" 
+              name="complectation" 
+              value="c5" 
+              onclick="changeImage(this)" 
+              image="./images/complectation-card-1.png"
+              checked="checked"><span class="section__complectations-button">c5</span>
+            </label>
+            <label class="section__complectations-list-item">
+              <input 
+              class="section__complectations-button visually-hidden s5"              
+              type="radio" 
+              name="complectation" 
+              value="s5" 
+              onclick="changeImage(this)" 
+              image="./images/complectation-card-2.png"
+              ><span class="section__complectations-button">s5</span>
+            </label>
+            <label class="section__complectations-list-item">
+              <input 
+              class="section__complectations-button visually-hidden s5gt"              
+              type="radio" 
+              name="complectation" 
+              value="s5gt" 
+              onclick="changeImage(this)" 
+              image="./images/complectation-card-3.png"
+              ><span class="section__complectations-button">s5gt</span>
+            </label>            
+          </fieldset>
+        </div>
         <div class="section__complectations-select-wrapper">
           <button
             type="button"
@@ -733,7 +747,8 @@
         </div>
         <div class="section__complectations-cards-wrapper">
           <div class="section__complectations-card decorated-bg-zone-1">
-            <p class="section__complectations-card-title">
+            <p class="section__complectations-card-title"
+            id="car-text1">
               OMODA C5
               <span class="section__complectations-card-title-decorated"
                 >Joy</span
@@ -756,6 +771,7 @@
               <p class="section__complectations-card-text">Передний</p>
             </div>
             <img
+            id="car-img2"
               src="./images/complectation-card-1.png"
               alt="omoda c5"
               class="section__complectations-card-image"
@@ -813,6 +829,7 @@
               <p class="section__complectations-card-text">Передний</p>
             </div>
             <img
+            id="car-img3"
               src="./images/complectation-card-1.png"
               alt="omoda c5"
               class="section__complectations-card-image"
@@ -871,6 +888,7 @@
               <p class="section__complectations-card-text">Передний</p>
             </div>
             <img
+            id="car-img4"
               src="./images/complectation-card-1.png"
               alt="omoda c5"
               class="section__complectations-card-image"
@@ -1147,6 +1165,23 @@
         </div>
       </div>
     </footer>
+
+    <dialog class="popup-after-popup" id="dialog-after">
+      <h3 class="popup-h3">Спасибо за заявку!</h3>
+      <p class="popup-p">Наш менеджер свяжется<br> 
+        с Вами через 2-3 минуты</p>
+        <form class="dialog-form" method="dialog">
+          <button 
+          class="dialog-close-button"
+          type="button"
+          onclick="window['dialog-after'].close();"
+          >
+            <span class="visually-hidden">Закрыть окно</span>
+          </button>
+        </form>
+    </dialog>
+    
+    
     <dialog id="dialog-recall">
       <div class="dialog-bg">
         <img src="./images/popup/recall-bg.jpg" class="visually-hidden-mob">
@@ -1164,8 +1199,7 @@
           <label for="time-input" class="time-input-label">
             <span class="time-input-span">Выбрать удобное время</span>
           </label>         
-          <button 
-         
+          <button          
           type="submit" 
           id="submit-button"
           class="dialog-button">Заказать звонок</button>

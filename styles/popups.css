@@ -242,6 +242,39 @@ dialog .done {
   visibility: hidden;
 }
 
+.popup-after-popup {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 525px;
+  height: 322px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;  
+  gap: 27px;
+  padding: 20px 21px;
+}
+
+.popup-h3 {
+font-size: 35px;
+font-weight: 600;
+line-height: 47.67px;
+color: #6DBBE6;
+}
+
+.popup-p {
+font-size: 25px;
+font-weight: 400;
+line-height: 34.05px;
+text-align: center;
+}
+
+
 /* adaptive */ /* adaptive */ /* adaptive */ /* adaptive */ /* adaptive */
 
 .dialog-bg-img-mob {
@@ -347,3 +380,4 @@ dialog .done {
     background-image: url(../images/popup/close-mob.png);
 }
 }
+

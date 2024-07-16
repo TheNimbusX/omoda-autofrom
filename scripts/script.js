@@ -109,7 +109,7 @@ optionsListComplectations.forEach((option) => {
 
 document.addEventListener('DOMContentLoaded', function() {
   // конечная дата
-  const deadline = new Date(2024, 07, 15);
+  const deadline = new Date(2024, 07, 01);
   // id таймера
   let timerId = null;
   // склонение числительных
@@ -193,11 +193,6 @@ function closeOnClick() {
   body.classList.remove("noscroll");
 }
 
-//////////////////////////////////////////////  owl carousel 
-
-$(document).ready(function(){
-  $("#slider").owlCarousel();
-});
 
 //////////////////////////////////////////////  swiper
 const swiper = new Swiper('.mySwiper', {
@@ -338,13 +333,14 @@ var swiper3 = new Swiper(".mySwiper3", {
 
 
 
-////////////////////////////////////////////// функция смены цвета в карточке автомобиля
+////////////////////////////////////////////// функция смены фото в карточке комплектации
 function changeImage(elem) {
   var imageUrl = elem.getAttribute("image");
-  document.getElementById("car-img").setAttribute("src", imageUrl);
+  document.getElementById("car-img2").setAttribute("src", imageUrl);
+  document.getElementById("car-img3").setAttribute("src", imageUrl);
+  document.getElementById("car-img4").setAttribute("src", imageUrl);
 }
-document.querySelector('[value="white"]').click();
-
+document.querySelector('[value="c5"]').click();
 
 
 
