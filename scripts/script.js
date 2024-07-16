@@ -334,14 +334,6 @@ var swiper3 = new Swiper(".mySwiper3", {
   keyboard: true,
 });
 
-////////////////////////////////////////////// функция смены фото в карточке комплектации
-function changeImage(elem) {
-  var imageUrl = elem.getAttribute("image");
-  document.getElementById("car-img2").setAttribute("src", imageUrl);
-  document.getElementById("car-img3").setAttribute("src", imageUrl);
-  document.getElementById("car-img4").setAttribute("src", imageUrl);
-}
-document.querySelector('[value="c5"]').click();
 
 /////////////////////////////////////////// yandex.api
 
@@ -365,3 +357,80 @@ function init() {
 
     myMap.geoObjects.add(placemark);
 }
+
+//////////////////////////////////////////// complectations menu
+
+document.querySelectorAll('#show-cards, #show-cards2, #show-cards3').forEach(function(el){
+  el.addEventListener("change", function() {
+    if (document.getElementById('show-cards').checked) {
+      document.getElementById('complect-card-1').style.display = 'block';
+      document.getElementById('complect-card-2').style.display = 'block';
+      document.getElementById('complect-card-3').style.display = 'block';
+      document.getElementById('complect-card-4').style.display = 'none';
+      document.getElementById('complect-card-5').style.display = 'none';
+      document.getElementById('complect-card-6').style.display = 'none';
+      document.getElementById('complect-card-7').style.display = 'none';
+      document.getElementById('complect-card-8').style.display = 'none';
+      document.getElementById('complect-card-9').style.display = 'none';
+    } else if (
+      document.getElementById('show-cards2').checked) {
+        document.getElementById('complect-card-1').style.display = 'none';
+        document.getElementById('complect-card-2').style.display = 'none';
+        document.getElementById('complect-card-3').style.display = 'none';
+        document.getElementById('complect-card-4').style.display = 'block';
+        document.getElementById('complect-card-5').style.display = 'block';
+        document.getElementById('complect-card-6').style.display = 'block';
+        document.getElementById('complect-card-7').style.display = 'none';
+        document.getElementById('complect-card-8').style.display = 'none';
+        document.getElementById('complect-card-9').style.display = 'none';
+      } else if (
+        document.getElementById('show-cards3').checked) {
+          document.getElementById('complect-card-1').style.display = 'none';
+          document.getElementById('complect-card-2').style.display = 'none';
+          document.getElementById('complect-card-3').style.display = 'none';
+          document.getElementById('complect-card-4').style.display = 'none';
+          document.getElementById('complect-card-5').style.display = 'none';
+          document.getElementById('complect-card-6').style.display = 'none';
+          document.getElementById('complect-card-7').style.display = 'block';
+          document.getElementById('complect-card-8').style.display = 'block';
+          document.getElementById('complect-card-9').style.display = 'block';
+        }  
+  });
+});
+
+document.getElementById('sel').addEventListener('change', function(){
+  if(this.options[this.selectedIndex].classList.contains("show-cards")){
+    document.getElementById('complect-card-1').style.display = 'block';
+    document.getElementById('complect-card-2').style.display = 'block';
+    document.getElementById('complect-card-3').style.display = 'block';
+    document.getElementById('complect-card-4').style.display = 'none';
+    document.getElementById('complect-card-5').style.display = 'none';
+    document.getElementById('complect-card-6').style.display = 'none';
+    document.getElementById('complect-card-7').style.display = 'none';
+    document.getElementById('complect-card-8').style.display = 'none';
+    document.getElementById('complect-card-9').style.display = 'none';
+  } 
+  else if(this.options[this.selectedIndex].classList.contains("show-cards2")) {
+      document.getElementById('complect-card-1').style.display = 'none';
+      document.getElementById('complect-card-2').style.display = 'none';
+      document.getElementById('complect-card-3').style.display = 'none';
+      document.getElementById('complect-card-4').style.display = 'block';
+      document.getElementById('complect-card-5').style.display = 'block';
+      document.getElementById('complect-card-6').style.display = 'block';
+      document.getElementById('complect-card-7').style.display = 'none';
+      document.getElementById('complect-card-8').style.display = 'none';
+      document.getElementById('complect-card-9').style.display = 'none';
+    } 
+    else if(this.options[this.selectedIndex].classList.contains("show-cards3"))
+       {
+        document.getElementById('complect-card-1').style.display = 'none';
+        document.getElementById('complect-card-2').style.display = 'none';
+        document.getElementById('complect-card-3').style.display = 'none';
+        document.getElementById('complect-card-4').style.display = 'none';
+        document.getElementById('complect-card-5').style.display = 'none';
+        document.getElementById('complect-card-6').style.display = 'none';
+        document.getElementById('complect-card-7').style.display = 'block';
+        document.getElementById('complect-card-8').style.display = 'block';
+        document.getElementById('complect-card-9').style.display = 'block';
+      }  
+});

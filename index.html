@@ -45,6 +45,7 @@
             +7 (999) 999 - 99 - 99
           </a>
         </address>
+        <a href="+79999999999" class="telephone-call-button"></a>
         <nav class="navbar">
           <div class="container-burger">
             <div class="navbar__wrap">
@@ -470,57 +471,34 @@
         <fieldset class="section__complectations-ul">
           <label class="section__complectations-list-item">
             <input class="section__complectations-button visually-hidden c5" type="radio" name="complectation"
-              value="c5" onclick="changeImage(this)" image="./images/complectation-card-1.png" checked="checked"><span
+              value="c5" checked="checked" id="show-cards"><span
               class="section__complectations-button">c5</span>
           </label>
           <label class="section__complectations-list-item">
             <input class="section__complectations-button visually-hidden s5" type="radio" name="complectation"
-              value="s5" onclick="changeImage(this)" image="./images/complectation-card-2.png"><span
+              value="s5" id="show-cards2"><span
               class="section__complectations-button">s5</span>
           </label>
           <label class="section__complectations-list-item">
             <input class="section__complectations-button visually-hidden s5gt" type="radio" name="complectation"
-              value="s5gt" onclick="changeImage(this)" image="./images/complectation-card-3.png"><span
+              value="s5gt" id="show-cards3"><span
               class="section__complectations-button">s5gt</span>
           </label>
         </fieldset>
       </div>
-      
+
       <div class="section__complectations-select-wrapper">
-        <select class="select-complect" onchange="document.getElementById('car-img3').src = this.value, 
-          document.getElementById('car-img4').src = this.value,
-          document.getElementById('car-img2').src = this.value" name="" id="sel" class="">
-          <option value="./images/complectation-card-1.png" name="complectation">C5</option>
-          <option value="./images/complectation-card-2.png" name="complectation">S5</option>
-          <option value="./images/complectation-card-3.png" name="complectation">S5GT</option>
+        <select class="select-complect" name="" id="sel" class="">
+          <option value="C5" name="complectation" class="show-cards">C5</option>
+          <option value="S5" name="complectation" class="show-cards2">S5</option>
+          <option value="S5GT" name="complectation" class="show-cards3">S5GT</option>
         </select>
       </div>
-      <div class="section__complectations-select-wrapper visually-hidden">
-        <button type="button" class="section__complectations-select-button" role="combobox" aria-label="select button"
-          aria-haspopup="listbox" aria-expanded="false" aria-controls="section__complectations-select-dropdown">
-          <span class="section__complectations-selected-value">С5</span>
-          <span class="section__complectations-arrow"></span>
-        </button>
-        <ul class="section__complectations-select-dropdown" role="listbox" id="section__complectations-select-dropdown">
-          <li role="section__complectations-option">
-            <input type="radio" name="complectation" value="c5" onclick="changeImage(this)"
-              image="./images/complectation-card-1.png" />
-            <label for="C5"><i class="bx bxl-c5"></i>C5</label>
-          </li>
-          <li role="section__complectations-option">
-            <input type="radio" name="complectation" value="s5" onclick="changeImage(this)"
-              image="./images/complectation-card-2.png" />
-            <label for="S5"><i class="bx bxl-S5"></i>S5</label>
-          </li>
-          <li role="section__complectations-option">
-            <input type="radio" name="complectation" value="s5gt" onclick="changeImage(this)"
-              image="./images/complectation-card-3.png" />
-            <label for="S5GT"><i class="bx bxl-S5GT"></i>S5GT</label>
-          </li>
-        </ul>
-      </div>
+      
+        
       <div class="section__complectations-cards-wrapper">
-        <div class="section__complectations-card decorated-bg-zone-1">
+
+        <div class="section__complectations-card decorated-bg-zone-1" id="complect-card-1" style="display: block;">
           <p class="section__complectations-card-title" id="car-text1">
             OMODA C5
             <span class="section__complectations-card-title-decorated">Joy</span>
@@ -534,20 +512,8 @@
             <img src="./images/gearbox-icon.png" alt="иконка кпп" class="section__complectations-card-property-image" />
             <p class="section__complectations-card-text">Передний</p>
           </div>
-          <img id="car-img2" src="./images/complectation-card-1.png" alt="omoda c5"
-            class="section__complectations-card-image" />
-          <div class="section__complectations-start-price">
-            <p class="section__complectations-start-price-text">цена от</p>
-            <p class="section__complectations-start-price-price">
-              от 2 289 900 ₽
-            </p>
-          </div>
-          <div class="section__complectations-credit-price">
-            <p class="section__complectations-credit-price-text">платеж от</p>
-            <p class="section__complectations-credit-price-price">
-              от ХХ ХХХ ₽/мес
-            </p>
-          </div>
+          <img id="car-img2" src="./images/complect-c5.png" alt="omoda c5"
+            class="section__complectations-card-image" />          
           <div class="section__complectations-card-buttons">
             <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
               class="section__complectations-card-get-deal button open-popup">
@@ -559,7 +525,8 @@
             </button>
           </div>
         </div>
-        <div class="section__complectations-card decorated-bg-zone-2">
+
+        <div class="section__complectations-card decorated-bg-zone-2" id="complect-card-2" style="display: block;">
           <p class="section__complectations-card-title">
             OMODA C5
             <span class="section__complectations-card-title-decorated">lifestyle</span>
@@ -573,20 +540,8 @@
             <img src="./images/gearbox-icon.png" alt="иконка кпп" class="section__complectations-card-property-image" />
             <p class="section__complectations-card-text">Передний</p>
           </div>
-          <img id="car-img3" src="./images/complectation-card-1.png" alt="omoda c5"
-            class="section__complectations-card-image" />
-          <div class="section__complectations-start-price">
-            <p class="section__complectations-start-price-text">цена от</p>
-            <p class="section__complectations-start-price-price">
-              от 2 289 900 ₽
-            </p>
-          </div>
-          <div class="section__complectations-credit-price">
-            <p class="section__complectations-credit-price-text">платеж от</p>
-            <p class="section__complectations-credit-price-price">
-              от ХХ ХХХ ₽/мес
-            </p>
-          </div>
+          <img id="car-img3" src="./images/complect-c5-2.png" alt="omoda c5"
+            class="section__complectations-card-image" />          
           <div class="section__complectations-card-buttons">
             <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
               class="section__complectations-card-get-deal decorated-bg button open-popup">
@@ -598,7 +553,8 @@
             </button>
           </div>
         </div>
-        <div class="section__complectations-card decorated-bg-zone-3">
+
+        <div class="section__complectations-card decorated-bg-zone-3" id="complect-card-3" style="display: block;">
           <p class="section__complectations-card-title">
             OMODA C5
             <span class="section__complectations-card-title-decorated">ultimate</span>
@@ -612,20 +568,8 @@
             <img src="./images/gearbox-icon.png" alt="иконка кпп" class="section__complectations-card-property-image" />
             <p class="section__complectations-card-text">Передний</p>
           </div>
-          <img id="car-img4" src="./images/complectation-card-1.png" alt="omoda c5"
-            class="section__complectations-card-image" />
-          <div class="section__complectations-start-price">
-            <p class="section__complectations-start-price-text">цена от</p>
-            <p class="section__complectations-start-price-price">
-              от 2 289 900 ₽
-            </p>
-          </div>
-          <div class="section__complectations-credit-price">
-            <p class="section__complectations-credit-price-text">платеж от</p>
-            <p class="section__complectations-credit-price-price">
-              от ХХ ХХХ ₽/мес
-            </p>
-          </div>
+          <img id="car-img4" src="./images/complect-c5-3.png" alt="omoda c5"
+            class="section__complectations-card-image" />          
           <div class="section__complectations-card-buttons">
             <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
               class="section__complectations-card-get-deal button open-popup">
@@ -637,6 +581,176 @@
             </button>
           </div>
         </div>
+          <div class="section__complectations-card decorated-bg-zone-1" id="complect-card-4" style="display: none;">
+            <p class="section__complectations-card-title" id="car-text1">
+              OMODA S5
+              <span class="section__complectations-card-title-decorated">Joy</span>
+            </p>
+            <div class="section__complectations-card-property">
+              <img src="./images/engine-icon.png" alt="иконка двигателя"
+                class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">2.0T, 7DCT</p>
+            </div>
+            <div class="section__complectations-card-property">
+              <img src="./images/gearbox-icon.png" alt="иконка кпп" class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">Передний</p>
+            </div>
+            <img id="car-img2" src="./images/complect-s5.png" alt="omoda c5"
+              class="section__complectations-card-image" />            
+            <div class="section__complectations-card-buttons">
+              <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
+                class="section__complectations-card-get-deal button open-popup">
+                зафиксировать условия
+              </button>
+              <button type="button" onclick="window['dialog-credit'].showModal()" aria-controls="dialog-credit"
+                class="section__complectations-get-credit button open-popup">
+                рассчитать кредит
+              </button>
+            </div>
+          </div>
+  
+          <div class="section__complectations-card decorated-bg-zone-2" id="complect-card-5" style="display: none;">
+            <p class="section__complectations-card-title" id="car-text1">
+              OMODA S5
+              <span class="section__complectations-card-title-decorated">lifestyle</span>
+            </p>
+            <div class="section__complectations-card-property">
+              <img src="./images/engine-icon.png" alt="иконка двигателя"
+                class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">2.0T, 7DCT</p>
+            </div>
+            <div class="section__complectations-card-property">
+              <img src="./images/gearbox-icon.png" alt="иконка кпп" class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">Передний</p>
+            </div>
+            <img id="car-img2" src="./images/complect-s5-2.png" alt="omoda c5"
+              class="section__complectations-card-image" />            
+            <div class="section__complectations-card-buttons">
+              <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
+                class="section__complectations-card-get-deal button open-popup">
+                зафиксировать условия
+              </button>
+              <button type="button" onclick="window['dialog-credit'].showModal()" aria-controls="dialog-credit"
+                class="section__complectations-get-credit button open-popup">
+                рассчитать кредит
+              </button>
+            </div>
+          </div>
+  
+          <div class="section__complectations-card decorated-bg-zone-3" id="complect-card-6" style="display: none;">
+            <p class="section__complectations-card-title" id="car-text1">
+              OMODA S5
+              <span class="section__complectations-card-title-decorated">ultimate</span>
+            </p>
+            <div class="section__complectations-card-property">
+              <img src="./images/engine-icon.png" alt="иконка двигателя"
+                class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">2.0T, 7DCT</p>
+            </div>
+            <div class="section__complectations-card-property">
+              <img src="./images/gearbox-icon.png" alt="иконка кпп" class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">Передний</p>
+            </div>
+            <img id="car-img2" src="./images/complect-s5-3.png" alt="omoda c5"
+              class="section__complectations-card-image" />            
+            <div class="section__complectations-card-buttons">
+              <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
+                class="section__complectations-card-get-deal button open-popup">
+                зафиксировать условия
+              </button>
+              <button type="button" onclick="window['dialog-credit'].showModal()" aria-controls="dialog-credit"
+                class="section__complectations-get-credit button open-popup">
+                рассчитать кредит
+              </button>
+            </div>
+          </div>
+
+          <div class="section__complectations-card decorated-bg-zone-1" id="complect-card-7" style="display: none;">
+            <p class="section__complectations-card-title" id="car-text1">
+              OMODA S5GT
+              <span class="section__complectations-card-title-decorated">Joy</span>
+            </p>
+            <div class="section__complectations-card-property">
+              <img src="./images/engine-icon.png" alt="иконка двигателя"
+                class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">2.0T, 7DCT</p>
+            </div>
+            <div class="section__complectations-card-property">
+              <img src="./images/gearbox-icon.png" alt="иконка кпп" class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">Передний</p>
+            </div>
+            <img id="car-img2" src="./images/complect-s5gt.png" alt="omoda s5gt"
+              class="section__complectations-card-image" />            
+            <div class="section__complectations-card-buttons">
+              <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
+                class="section__complectations-card-get-deal button open-popup">
+                зафиксировать условия
+              </button>
+              <button type="button" onclick="window['dialog-credit'].showModal()" aria-controls="dialog-credit"
+                class="section__complectations-get-credit button open-popup">
+                рассчитать кредит
+              </button>
+            </div>
+          </div>
+  
+          <div class="section__complectations-card decorated-bg-zone-2" id="complect-card-8" style="display: none;">
+            <p class="section__complectations-card-title" id="car-text1">
+              OMODA S5GT
+              <span class="section__complectations-card-title-decorated">lifestyle</span>
+            </p>
+            <div class="section__complectations-card-property">
+              <img src="./images/engine-icon.png" alt="иконка двигателя"
+                class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">2.0T, 7DCT</p>
+            </div>
+            <div class="section__complectations-card-property">
+              <img src="./images/gearbox-icon.png" alt="иконка кпп" class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">Передний</p>
+            </div>
+            <img id="car-img2" src="./images/complect-s5gt-2.png" alt="omoda s5gt"
+              class="section__complectations-card-image" />            
+            <div class="section__complectations-card-buttons">
+              <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
+                class="section__complectations-card-get-deal button open-popup">
+                зафиксировать условия
+              </button>
+              <button type="button" onclick="window['dialog-credit'].showModal()" aria-controls="dialog-credit"
+                class="section__complectations-get-credit button open-popup">
+                рассчитать кредит
+              </button>
+            </div>
+          </div>
+  
+          <div class="section__complectations-card decorated-bg-zone-3" id="complect-card-9" style="display: none;">
+            <p class="section__complectations-card-title" id="car-text1">
+              OMODA S5GT
+              <span class="section__complectations-card-title-decorated">ultimate</span>
+            </p>
+            <div class="section__complectations-card-property">
+              <img src="./images/engine-icon.png" alt="иконка двигателя"
+                class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">2.0T, 7DCT</p>
+            </div>
+            <div class="section__complectations-card-property">
+              <img src="./images/gearbox-icon.png" alt="иконка кпп" class="section__complectations-card-property-image" />
+              <p class="section__complectations-card-text">Передний</p>
+            </div>
+            <img id="car-img2" src="./images/complect-s5gt-3.png" alt="omoda s5gt"
+              class="section__complectations-card-image" />            
+            <div class="section__complectations-card-buttons">
+              <button type="button" onclick="window['dialog-recall'].showModal()" aria-controls="dialog-recall"
+                class="section__complectations-card-get-deal button open-popup">
+                зафиксировать условия
+              </button>
+              <button type="button" onclick="window['dialog-credit'].showModal()" aria-controls="dialog-credit"
+                class="section__complectations-get-credit button open-popup">
+                рассчитать кредит
+              </button>
+            </div>
+          </div>
+          
+        </div>
+
       </div>
     </section>
   </main>
@@ -726,11 +840,6 @@
     <h3 class="section__contacts-title">контакты</h3>
     <div class="section__contacts-wrapper-bg">
       <div id="map"></div>
-      <!-- <script type="text/javascript" charset="utf-8" async
-        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab3281a652a1e4ab1859b9a96c46f2d13280d4fb02de2e8ae8d410a31275ccb99&amp;width=100%25&amp;height=583&amp;lang=ru_RU&amp;scroll=true"></script> -->
-      <!-- <iframe
-        src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab3281a652a1e4ab1859b9a96c46f2d13280d4fb02de2e8ae8d410a31275ccb99&amp;source=constructor"
-        width="100%" height="583" frameborder="0"></iframe> -->
       <div class="section__contacts-wrapper">
         <div class="contacts-logo-wrapper">
           <img src="./images/logo.png" alt="логотип OMODA" class="section__contacts-logo" />
@@ -808,7 +917,9 @@
     </form>
   </dialog> -->
 
-
+  <div class="section__complectations-select-wrapper visually-hidden">
+    <button type="button" class="section__complectations-select-button"></button>
+  </div>
   <dialog id="dialog-recall">
     <div class="dialog-bg">
       <img src="./images/popup/recall-bg.jpg" class="visually-hidden-mob">
@@ -855,7 +966,7 @@
     </div>
     <div class="dialog-wrapper">
       <h4 class="dialog-h2">Выгодный автокредит<br>
-        на Omoda под 0,01%</h4>
+        без первого взноса.</h4>
       <p class="dialog-paragraph">
         Одобрение за 1 день!
       </p>
