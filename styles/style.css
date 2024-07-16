@@ -1415,7 +1415,7 @@ input[type="number"] {
 }
 
 .section__contacts-wrapper-bg {
-  background-image: url(../images/contacts-bg.png);
+  /* background-image: url(../images/contacts-bg.png); */
   background-position: center;
   background-size: cover;
   width: 100%;
@@ -1579,6 +1579,8 @@ input[type="number"] {
 .menu {
   display: none;
 }
+
+
 
 @media (width >= 2050px) {
   .header__banner {
@@ -1876,6 +1878,10 @@ input[type="number"] {
 @media (width > 360px) and (width <= 768px) {
   header {
     margin: 0 0;
+  }
+
+  main { 
+    margin: 0;
   }
 
   .main {
@@ -2218,7 +2224,7 @@ input[type="number"] {
     height: 639px;
     max-height: 639px;
     background-image: url(../images/mobile/card-bg-mob.png);
-    background-size: 360px 640px;
+    background-size: 100vw 640px;
     background-repeat: no-repeat;
     background-position: 0px 80px;
   }
@@ -2287,7 +2293,7 @@ input[type="number"] {
     position: absolute;
     content: "Выгода до 1 400 000 ₽ ";
     top: 326px;
-    left: -13px;
+    left: -0px;
     width: 181px;
     height: 38px;
     color: #222222;
@@ -2298,7 +2304,7 @@ input[type="number"] {
 
   .model-range-card-right-side::before {
     top: -265px;
-    left: 20px;
+    left: 0%;
     font-size: 12px;
     line-height: 16.34px;
     width: 326px;
@@ -2321,6 +2327,7 @@ input[type="number"] {
 
   .model-range-card-right-side {
     width: 100%;
+    max-width: 328px;
   }
 
   .model-range-card-ul {
@@ -2359,9 +2366,9 @@ input[type="number"] {
     flex-direction: column;
     justify-items: flex-end;
     gap: 3px;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 2px;
     margin-top: 0px;
   }
 
@@ -2401,14 +2408,15 @@ input[type="number"] {
 
   .model-range-card-get-deal {
     padding: 20px 48.5px;
-    max-width: 328px;
+    min-width: 328px;
     max-height: 60px;
+    text-wrap: nowrap;
   }
 
   .model-range-card-get-credit {
     padding: 20px 48.5px;
     width: 100%;
-    max-width: 328px;
+    min-width: 328px;
     max-height: 60px;
   }
 
@@ -2419,7 +2427,7 @@ input[type="number"] {
 
   .model-range-card-buttons {
     width: 100%;
-    padding-left: 16px;
+    padding-left: 0px;
     padding-right: 16px;
     padding-top: 0px;
     gap: 5px;
@@ -2704,6 +2712,7 @@ margin-top: 10px;
 
   .section__tradein-wrapper {
     align-items: center;
+    max-width: 530px;
   }
 
   .select-wrapper {
@@ -2757,6 +2766,7 @@ margin-top: 10px;
     margin-top: 7px;
     max-width: 328px;
     padding-left: 4px;
+    align-self: flex-start;
   }
 
   .personal-data-text {
@@ -2776,7 +2786,6 @@ margin-top: 10px;
     padding: 0;
     min-height: none;
     justify-content: center;
-    align-items: center;
   }
 
   .section__credit-title {
@@ -2787,7 +2796,7 @@ margin-top: 10px;
 
   .section__credit-title:nth-child(2) {
     margin-top: 2px;
-    align-self: center;
+    align-self: flex-start;
   }
 
   .section__credit-text {
@@ -2820,8 +2829,7 @@ margin-top: 10px;
     margin-top: 5px;
     max-width: 100%;
     padding-left: 0px;
-    align-self: center;
-    justify-content: center;
+    align-self: flex-start;
   }
 
   .section__contacts {
@@ -4466,6 +4474,22 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 /* yandex api map */
 
+
+
+#map {
+  width: 100%;
+  height:583px;
+  filter: grayscale(0%);  
+}
+
+.ymaps-2-1-79-ground-pane{
+	filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+}
+
 iframe:nth-of-type(1) {
   filter: grayscale(100%);
   max-height: 485px;
@@ -4473,14 +4497,15 @@ iframe:nth-of-type(1) {
 }
 
 @media (width > 360px) and (width <= 768px) {
-  iframe:nth-of-type(1) {
-    max-height: 270px;
+  #map {
+    height:271px;
   }
+  
 }
 
 @media (width <= 360px) {
-  iframe:nth-of-type(1) {
-    max-height: 270px;
+  #map {
+    height:271px;
   }
 }
 

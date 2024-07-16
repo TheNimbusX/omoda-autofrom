@@ -115,15 +115,15 @@ optionsListComplectations.forEach((option) => {
 });
 
 ////////////////////////////////////////////// таймер
-let days = document.getElementById('days');
-let hours = document.getElementById('hours');
-let minutes = document.getElementById('minutes');
-let seconds = document.getElementById('seconds');
+let days = document.getElementById("days");
+let hours = document.getElementById("hours");
+let minutes = document.getElementById("minutes");
+let seconds = document.getElementById("seconds");
 
-let dd = document.getElementById('dd');
-let hh = document.getElementById('hh');
-let mm = document.getElementById('mm');
-let ss = document.getElementById('ss');
+let dd = document.getElementById("dd");
+let hh = document.getElementById("hh");
+let mm = document.getElementById("mm");
+let ss = document.getElementById("ss");
 
 let countdown = document.getElementById("countdown");
 let wishDays = 10;
@@ -138,7 +138,7 @@ let x = setInterval(function () {
   let d = Math.floor(distance / (1000 * 60 * 60 * 24));
   let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let s = Math.floor((distance % (1000 * 60)) / (1000));
+  let s = Math.floor((distance % (1000 * 60)) / 1000);
 
   // output the result
   days.innerHTML = d + "<br><span>Дней</span>";
@@ -154,13 +154,14 @@ let x = setInterval(function () {
 
   // if countdown is over, change the innerText of .text
   if (distance < 0) {
-    document.querySelector('.text').innerText = `Предложение закончилось${currentYear}`;
+    document.querySelector(
+      ".text"
+    ).innerText = `Предложение закончилось${currentYear}`;
   }
 }, 1000);
 // animation loop
 function animate() {
   requestAnimationFrame(animate);
- 
 }
 animate();
 
@@ -341,3 +342,26 @@ function changeImage(elem) {
   document.getElementById("car-img4").setAttribute("src", imageUrl);
 }
 document.querySelector('[value="c5"]').click();
+
+/////////////////////////////////////////// yandex.api
+
+ymaps.ready(init);
+function init() {
+
+    var myMap = new ymaps.Map("map", {
+        center: [55.632407, 37.467188],
+        zoom: 16.5,
+        controls: []
+    });
+    var placemark = new ymaps.Placemark([55.632907, 37.465710], {
+        hintContent: 'Omoda',
+    }, {
+        iconLayout: 'default#image',
+        iconImageHref: './images/pin.png',
+        iconImageSize: [65, 85],
+        iconImageOffset: [-16, -16],
+        'preset': 'islands#green',
+    });
+
+    myMap.geoObjects.add(placemark);
+}
