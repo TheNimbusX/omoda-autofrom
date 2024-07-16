@@ -231,7 +231,7 @@ dialog:not([open]) {
   margin-top: 6px;
 }
 
-dialog .done {
+/* dialog .done {
   position: absolute;
   top: 0;
   width: 400px;
@@ -272,7 +272,7 @@ dialog .done {
   font-weight: 400;
   line-height: 34.05px;
   text-align: center;
-}
+} */
 
 /* adaptive */ /* adaptive */ /* adaptive */ /* adaptive */ /* adaptive */
 
