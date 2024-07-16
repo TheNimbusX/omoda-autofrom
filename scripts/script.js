@@ -215,7 +215,7 @@ const swiper = new Swiper('.mySwiper', {
   },
 
   breakpoints: {
-    640: {
+    360: {
       pagination: {        
         dynamicMainBullets: 3,
       },
@@ -254,10 +254,35 @@ var swiper2 = new Swiper(".mySwiper2", {
     el: ".swiper-pagination",
     clickable: 'true',
     horizontalClass: 'swiper-pagination-vertical',
+    dynamicBullets: 'true',
+    dynamicMainBullets: 8,
+     bulletClass: 'swiper-pagination-bullet',
   },
+
+  breakpoints: {
+    360: {
+      pagination: {        
+        dynamicMainBullets: 3,
+      },
+    },
+    768: {
+      pagination: {
+        
+        dynamicMainBullets: 8,
+      },
+    },
+    1024: {
+      pagination: {
+        
+        dynamicMainBullets: 8,
+      },
+    },
+  },
+  
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next2",
+    prevEl: ".swiper-button-prev2",
+    
 },
   scrollbar: {
     el: '.swiper-scrollbar',
@@ -274,10 +299,35 @@ var swiper3 = new Swiper(".mySwiper3", {
     el: ".swiper-pagination",
     clickable: 'true',
     horizontalClass: 'swiper-pagination-vertical',
+    dynamicBullets: 'true',
+    dynamicMainBullets: 8,
+     bulletClass: 'swiper-pagination-bullet',
   },
+
+  breakpoints: {
+    360: {
+      pagination: {        
+        dynamicMainBullets: 3,
+      },
+    },
+    768: {
+      pagination: {
+        
+        dynamicMainBullets: 8,
+      },
+    },
+    1024: {
+      pagination: {
+        
+        dynamicMainBullets: 8,
+      },
+    },
+  },
+  
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next3",
+    prevEl: ".swiper-button-prev3",
+    
 },
   scrollbar: {
     el: '.swiper-scrollbar',
@@ -285,7 +335,6 @@ var swiper3 = new Swiper(".mySwiper3", {
   mousewheel: true,
   keyboard: true,
 });
-
 
 
 
