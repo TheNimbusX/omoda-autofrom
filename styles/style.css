@@ -4254,7 +4254,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   .swiper-rtl .swiper-button-prev2 {
     display: flex;
     position: absolute;
-    top: 280px;
+    top: 300px;
     right: 70px;
     color: #000;
     width: 15px;
@@ -4265,7 +4265,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   .swiper-rtl .swiper-button-next2 {
     display: flex;
     position: absolute;
-    top: 280px;
+    top: 300px;
     left: 70px;
     color: #000;
     width: 15px;
@@ -4300,7 +4300,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   .swiper-rtl .swiper-button-prev3 {
     display: flex;
     position: absolute;
-    top: 280px;
+    top: 300px;
     right: 70px;
     color: #000;
     width: 15px;
@@ -4311,7 +4311,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   .swiper-rtl .swiper-button-next3 {
     display: flex;
     position: absolute;
-    top: 280px;
+    top: 300px;
     left: 70px;
     color: #000;
     width: 15px;
@@ -4332,7 +4332,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 .animated-time {
   border: 1px solid #e7e7e7;
-  border-radius: 50%;
+  border-radius: 100%;
   border-block-end-color: #000000;
   animation-name: loading;
   animation-iteration-count: infinite;
@@ -4389,16 +4389,19 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   .animated-time {
     width: 72px;
     height: 70px;
-    top: 59px;
+    top: 58.53px;
   }
 }
 
 @media (width <= 360px) {
   .animated-time {
     width: 72px;
-    height: 70px;
-    top: 59px;
+    height: 72px;
+    top: 58px;
   }
+   .header__timer-wrapper-anim {
+    overflow: hidden;
+   }
 }
 
 
@@ -4407,14 +4410,17 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 iframe:nth-of-type(1) {
   filter: grayscale(100%);
   max-height: 485px;
+  max-width: 100%;
 }
 
-iframe:nth-of-type(2) {
-  display: none;
+@media (width > 360px) and (width <= 768px) {
+  iframe:nth-of-type(1) {
+    max-height: 270px;
+  }
 }
 
 @media (width <= 360px) {
   iframe:nth-of-type(1) {
-    display: none;
+    max-height: 270px;
   }
 }
