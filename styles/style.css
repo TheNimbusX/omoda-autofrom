@@ -2465,6 +2465,39 @@ input[type="number"] {
     margin-top: 0px;
   }
 
+.select-complect {
+  min-width: 100%;
+  padding: 8.5px 0 8.5px 10px;
+font-size: 20px;
+font-weight: 700;
+line-height: 27.24px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+display: inline-block;
+position: relative;
+}
+
+.section__complectations-select-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 19px; 
+  right: 16.25px;
+  width: 15.5px;
+  height: 8px;
+  font-size: 12px;
+  z-index: 1;  
+  background-image: url(../images/mobile/black-arrow-mob.png);
+}
+
+.select-complect option {
+  padding: 8.5px 0 10px;
+font-size: 20px;
+font-weight: 700;
+line-height: 27.24px;
+margin-top: 10px;
+}
+  
   .section__complectations-select-button {
     width: 100%;
     font-size: 20px;
@@ -3981,45 +4014,6 @@ a:hover {
   max-height: 202px;
   max-width: 344px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* target the active bullet */

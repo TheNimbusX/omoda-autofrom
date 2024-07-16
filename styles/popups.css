@@ -255,25 +255,24 @@ dialog .done {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;  
+  background-color: white;
   gap: 27px;
   padding: 20px 21px;
 }
 
 .popup-h3 {
-font-size: 35px;
-font-weight: 600;
-line-height: 47.67px;
-color: #6DBBE6;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 47.67px;
+  color: #6dbbe6;
 }
 
 .popup-p {
-font-size: 25px;
-font-weight: 400;
-line-height: 34.05px;
-text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 34.05px;
+  text-align: center;
 }
-
 
 /* adaptive */ /* adaptive */ /* adaptive */ /* adaptive */ /* adaptive */
 
@@ -366,7 +365,7 @@ text-align: center;
     text-wrap: nowrap;
     margin-top: 10px;
   }
-  
+
   b {
     margin-bottom: 16px;
   }
@@ -376,8 +375,7 @@ text-align: center;
     line-height: 9.53px;
   }
 
-  .dialog-close-button {   
+  .dialog-close-button {
     background-image: url(../images/popup/close-mob.png);
+  }
 }
-}
-

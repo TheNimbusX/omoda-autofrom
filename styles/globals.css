@@ -32,21 +32,22 @@ button {
   padding-inline: 0;
 }
 
-input[type="checkbox" i] {  
+input[type="checkbox" i] {
   margin: 0;
 }
 
 fieldset {
-  margin-inline-start:0;
-    margin-inline-end: 0;
-    padding-block-start: 0;
-    padding-inline-start: 0;
-    padding-inline-end: 0;
-    padding-block-end: 0;
-    min-inline-size: min-content;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-end: 0;
+  min-inline-size: min-content;
 }
 
-main, header {
+main,
+header {
   max-width: 1184px;
   margin: 0 auto;
 }

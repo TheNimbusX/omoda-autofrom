@@ -69,11 +69,19 @@ optionsListModel.forEach((option) => {
   option.addEventListener("click", handler);
 });
 
-const customSelectComplectations = document.querySelector(".section__complectations-select-wrapper");
-const selectBtnComplectations = document.querySelector(".section__complectations-select-button");
+const customSelectComplectations = document.querySelector(
+  ".section__complectations-select-wrapper"
+);
+const selectBtnComplectations = document.querySelector(
+  ".section__complectations-select-button"
+);
 
-const selectedValueComplectations = document.querySelector(".section__complectations-selected-value");
-const optionsListComplectations = document.querySelectorAll(".section__complectations-select-dropdown li");
+const selectedValueComplectations = document.querySelector(
+  ".section__complectations-selected-value"
+);
+const optionsListComplectations = document.querySelectorAll(
+  ".section__complectations-select-dropdown li"
+);
 
 // добавляем клик event на кнопку select button
 selectBtnComplectations.addEventListener("click", () => {
@@ -82,7 +90,9 @@ selectBtnComplectations.addEventListener("click", () => {
   // обновление атрибура aria-expanded based в текущем состоянии
   selectBtnComplectations.setAttribute(
     "aria-expanded",
-    selectBtnComplectations.getAttribute("aria-expanded") === "true" ? "false" : "true"
+    selectBtnComplectations.getAttribute("aria-expanded") === "true"
+      ? "false"
+      : "true"
   );
 });
 
@@ -104,17 +114,20 @@ optionsListComplectations.forEach((option) => {
   option.addEventListener("click", handler);
 });
 
-
 ////////////////////////////////////////////// таймер
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // конечная дата
   const deadline = new Date(2024, 07, 01);
   // id таймера
   let timerId = null;
   // склонение числительных
   function declensionNum(num, words) {
-    return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+    return words[
+      num % 100 > 4 && num % 100 < 20
+        ? 2
+        : [2, 0, 1, 1, 1, 2][num % 10 < 5 ? num % 10 : 5]
+    ];
   }
   // вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
   function countdownTimer() {
@@ -126,40 +139,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
     const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
     const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
-    $days.textContent = days < 10 ? '0' + days : days;
-    $hours.textContent = hours < 10 ? '0' + hours : hours;
-    $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
-    $seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
-    $days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
-    $hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
-    $minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
-    $seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+    $days.textContent = days < 10 ? "0" + days : days;
+    $hours.textContent = hours < 10 ? "0" + hours : hours;
+    $minutes.textContent = minutes < 10 ? "0" + minutes : minutes;
+    $seconds.textContent = seconds < 10 ? "0" + seconds : seconds;
+    $days.dataset.title = declensionNum(days, ["день", "дня", "дней"]);
+    $hours.dataset.title = declensionNum(hours, ["час", "часа", "часов"]);
+    $minutes.dataset.title = declensionNum(minutes, [
+      "минута",
+      "минуты",
+      "минут",
+    ]);
+    $seconds.dataset.title = declensionNum(seconds, [
+      "секунда",
+      "секунды",
+      "секунд",
+    ]);
   }
   // получаем элементы, содержащие компоненты даты
-  const $days = document.querySelector('.days');
-  const $hours = document.querySelector('.hours');
-  const $minutes = document.querySelector('.mins');
-  const $seconds = document.querySelector('.secs');
+  const $days = document.querySelector(".days");
+  const $hours = document.querySelector(".hours");
+  const $minutes = document.querySelector(".mins");
+  const $seconds = document.querySelector(".secs");
   // вызываем функцию countdownTimer
   countdownTimer();
   // вызываем функцию countdownTimer каждую секунду
   timerId = setInterval(countdownTimer, 500);
 });
 
-
 ////////////////////////////////////////////// popups
-
 
 ////////////////////////////////////////////// проверка номера телефона
 
-IMask(
-  document.getElementById('tel'),
-  {
-    mask: '+{7}(000)000-00-00'
-  }
-)
+IMask(document.getElementById("tel"), {
+  mask: "+{7}(000)000-00-00",
+});
 
-////////////////////////////////////////////// бургер меню 
+////////////////////////////////////////////// бургер меню
 const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup");
 const body = document.body;
@@ -193,145 +209,132 @@ function closeOnClick() {
   body.classList.remove("noscroll");
 }
 
-
 //////////////////////////////////////////////  swiper
-const swiper = new Swiper('.mySwiper', {
-  direction: 'horizontal',
+const swiper = new Swiper(".mySwiper", {
+  direction: "horizontal",
   loop: true,
   spaceBetween: 30,
   pagination: {
     el: ".swiper-pagination",
-    clickable: 'true',
-    horizontalClass: 'swiper-pagination-vertical',
-    dynamicBullets: 'true',
+    clickable: "true",
+    horizontalClass: "swiper-pagination-vertical",
+    dynamicBullets: "true",
     dynamicMainBullets: 8,
-     bulletClass: 'swiper-pagination-bullet',
+    bulletClass: "swiper-pagination-bullet",
   },
 
   breakpoints: {
     360: {
-      pagination: {        
+      pagination: {
         dynamicMainBullets: 3,
       },
     },
     768: {
       pagination: {
-        
         dynamicMainBullets: 8,
       },
     },
     1024: {
       pagination: {
-        
         dynamicMainBullets: 8,
       },
     },
   },
-  
+
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
-    
-},
+  },
   scrollbar: {
-    el: '.swiper-scrollbar',
+    el: ".swiper-scrollbar",
   },
   mousewheel: true,
   keyboard: true,
 });
 
 var swiper2 = new Swiper(".mySwiper2", {
-  direction: 'horizontal',
+  direction: "horizontal",
   loop: true,
   spaceBetween: 30,
   pagination: {
     el: ".swiper-pagination",
-    clickable: 'true',
-    horizontalClass: 'swiper-pagination-vertical',
-    dynamicBullets: 'true',
+    clickable: "true",
+    horizontalClass: "swiper-pagination-vertical",
+    dynamicBullets: "true",
     dynamicMainBullets: 8,
-     bulletClass: 'swiper-pagination-bullet',
+    bulletClass: "swiper-pagination-bullet",
   },
 
   breakpoints: {
     360: {
-      pagination: {        
+      pagination: {
         dynamicMainBullets: 3,
       },
     },
     768: {
       pagination: {
-        
         dynamicMainBullets: 8,
       },
     },
     1024: {
       pagination: {
-        
         dynamicMainBullets: 8,
       },
     },
   },
-  
+
   navigation: {
     nextEl: ".swiper-button-next2",
     prevEl: ".swiper-button-prev2",
-    
-},
+  },
   scrollbar: {
-    el: '.swiper-scrollbar',
+    el: ".swiper-scrollbar",
   },
   mousewheel: true,
   keyboard: true,
 });
 
 var swiper3 = new Swiper(".mySwiper3", {
-  direction: 'horizontal',
+  direction: "horizontal",
   loop: true,
   spaceBetween: 30,
   pagination: {
     el: ".swiper-pagination",
-    clickable: 'true',
-    horizontalClass: 'swiper-pagination-vertical',
-    dynamicBullets: 'true',
+    clickable: "true",
+    horizontalClass: "swiper-pagination-vertical",
+    dynamicBullets: "true",
     dynamicMainBullets: 8,
-     bulletClass: 'swiper-pagination-bullet',
+    bulletClass: "swiper-pagination-bullet",
   },
 
   breakpoints: {
     360: {
-      pagination: {        
+      pagination: {
         dynamicMainBullets: 3,
       },
     },
     768: {
       pagination: {
-        
         dynamicMainBullets: 8,
       },
     },
     1024: {
       pagination: {
-        
         dynamicMainBullets: 8,
       },
     },
   },
-  
+
   navigation: {
     nextEl: ".swiper-button-next3",
     prevEl: ".swiper-button-prev3",
-    
-},
+  },
   scrollbar: {
-    el: '.swiper-scrollbar',
+    el: ".swiper-scrollbar",
   },
   mousewheel: true,
   keyboard: true,
 });
-
-
-
 
 ////////////////////////////////////////////// функция смены фото в карточке комплектации
 function changeImage(elem) {
@@ -341,8 +344,3 @@ function changeImage(elem) {
   document.getElementById("car-img4").setAttribute("src", imageUrl);
 }
 document.querySelector('[value="c5"]').click();
-
-
-
-
-
