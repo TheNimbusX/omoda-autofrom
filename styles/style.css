@@ -4857,9 +4857,14 @@ iframe:nth-of-type(1) {
 
 /* select2 */
 
-
+.select2-container {
+  width: 530px !important;
+  max-width: 100% !important;
+  display: flex;
+  justify-content: flex-end;
+}
 .select2-container--default .select2-selection--single{
-  width: 100%;
+  width: 530px;
   max-width: 530px;
   font-size: 18px;
   background-color: transparent;
@@ -4874,6 +4879,7 @@ iframe:nth-of-type(1) {
   align-items: center;
   margin-top: 14px;
   outline: none;
+  border-radius: 0;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -4900,3 +4906,38 @@ iframe:nth-of-type(1) {
   left: -10.3px !important;
 }
 
+/* @media (width > 768px) and (width < 1200px) {
+   .select2-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  } 
+}
+
+@media  (width <= 768px) {
+  .select2-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+*/
+
+ @media (width < 562px) {
+.selection {
+  max-width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single {
+  max-width: 100%;
+}
+  
+  .select2-container {
+    width: 100% !important;
+    display: flex;
+    justify-content: flex-end;
+  }
+}  
