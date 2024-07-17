@@ -128,8 +128,8 @@
 
           <div class="circle" style="--clr: #000000;">
             <svg>
-              <circle cx="55" cy="55" r="59" fill="none"></circle>
-              <circle cx="55" cy="55" r="59" id="ss" fill="none"></circle>              
+              <circle cx="55" cy="55" r="59"></circle>
+              <circle cx="55" cy="55" r="59" id="ss"></circle>              
             </svg>
             <div id="seconds">00<br><span>Секунд</span></div>
           </div>
@@ -146,7 +146,7 @@
       <div class="section__offers-unit decorated">
         <img src="./images/percent.png" alt="иконка процента" class="section__offers-img" />
         <img src="./images/mobile/percent-mob.png" alt="иконка процента" class="section__offers-img-mob" />
-        <p class="section__offers-description">Кредит от 0,01%*</p>
+        <p class="section__offers-description">Выгода до 400 000 ₽</p>
       </div>
       <div class="section__offers-unit decorated">
         <img src="./images/refresh.png" alt="иконка гарантии обмена" class="section__offers-img" />
@@ -748,6 +748,10 @@
               </button>
             </div>
           </div>
+
+          <div class="section__complectations-select-wrapper visually-hidden">
+            <button type="button" class="section__complectations-select-button"></button>
+          </div>
           
         </div>
 
@@ -824,7 +828,8 @@
       <p class="section__credit-text">
         Оставьте заявку и узнайте свою выгоду!
       </p>
-      <input id="tel" type="tel" placeholder="+ 7 (_ _ _)___ __ __" class="form-input input-tel credit-input" />
+      <input id="tel2" type="tel" placeholder="+ 7 (_ _ _)___ __ __" class="form-input input-tel credit-input"
+      pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$" />
       <button type="button" onclick="window['dialog-tradein'].showModal()" aria-controls="dialog-tradein"
         class="section__credit-button button section__tradein-button open-popup">
         оставить заявку
@@ -868,7 +873,21 @@
   </section>
 
   <footer class="footer">
-    <div class="footer__wrapper">
+    <div class="footer__icons">
+        <div class="footer__icons-wrapper">
+        <img src="./images/sovcom.png" alt="логотип совкомбанк" class="visually-hidden-mob icons-hide">
+        <img src="./images/mobile/bank1.png" alt="логотип совкомбанк" class="icons-mobile">
+        <img src="./images/alfabank.png" alt="логотип альфабанк" class="visually-hidden-mob icons-hide">
+        <img src="./images/mobile/bank2.png" alt="логотип альфабанк" class="icons-mobile">
+        <img src="./images/rosbank.png" alt="логотип росбанк" class="visually-hidden-mob icons-hide">
+        <img src="./images/mobile/bank3.png" alt="логотип росбанк" class="icons-mobile">
+        <img src="./images/drivebank.png" alt="логотип драйвклик банк" class="visually-hidden-mob icons-hide">
+        <img src="./images/mobile/bank4.png" alt="логотип драйвклик банк" class="icons-mobile">
+        <img src="./images/vtb.png" alt="логотип втб банк" class="visually-hidden-mob icons-hide">
+        <img src="./images/mobile/bank5.png" alt="логотип втб банк" class="icons-mobile">
+      </div>
+    </div>
+    <div class="footer__wrapper">   
       <div class="footer__logo-wrapper">
         <img src="./images/footer-logo.png" alt="логотип OMODA" class="footer__logo visually-hidden-mob" />
         <picture class="footer__logo-wrapper-mob">
@@ -917,9 +936,7 @@
     </form>
   </dialog> -->
 
-  <div class="section__complectations-select-wrapper visually-hidden">
-    <button type="button" class="section__complectations-select-button"></button>
-  </div>
+  
   <dialog id="dialog-recall">
     <div class="dialog-bg">
       <img src="./images/popup/recall-bg.jpg" class="visually-hidden-mob">
@@ -929,7 +946,8 @@
       <h4 class="dialog-h2">Оставьте заявку и мы Вам перезвоним!</h4>
       <form class="dialog-form" id="form">
         <input type="name" id="name" placeholder="Ваше имя" class="dialog-input" />
-        <input type="tel" id="tel" placeholder="Ваш номер телефона" class="dialog-input" />
+        <input type="tel" id="tel3" placeholder="Ваш номер телефона" class="dialog-input"
+        pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$" />
         <div class="time-wrapper">
           <button type="button" class="time-button">Перезвонить сейчас</button>
           <input type="time" class="time-input" id="time-input">
@@ -972,8 +990,8 @@
       </p>
       <form class="dialog-form" id="form">
         <input type="name" id="name" placeholder="Ваше имя" class="dialog-input" />
-        <input type="tel" id="tel" placeholder="Ваш номер телефона" class="dialog-input" />
-
+        <input type="tel" id="tel4" placeholder="Ваш номер телефона" class="dialog-input" 
+        pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"/>
         <button type="submit" class="dialog-button">Рассчитать кредит</button>
         <div class="personal-data-wrapper-popup">
           <div class="checkbox-custom">
@@ -1009,7 +1027,8 @@
       </p>
       <form class="dialog-form" id="form">
         <input type="name" id="name" placeholder="Ваше имя" class="dialog-input" />
-        <input type="tel" id="tel" placeholder="Ваш номер телефона" class="dialog-input" />
+        <input type="tel" id="tel4" placeholder="Ваш номер телефона" class="dialog-input" 
+        pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"/>
 
         <button type="submit" class="dialog-button">Оформить Trade-In</button>
         <div class="personal-data-wrapper-popup">

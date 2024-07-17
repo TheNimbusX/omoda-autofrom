@@ -172,6 +172,12 @@ animate();
 IMask(document.getElementById("tel"), {
   mask: "+{7}(000)000-00-00",
 });
+IMask(document.getElementById("tel2"), {
+  mask: "+{7}(000)000-00-00",
+});
+IMask(document.getElementById("tel4"), {
+  mask: "+{7}(000)000-00-00",
+});
 
 ////////////////////////////////////////////// бургер меню
 const hamb = document.querySelector("#hamb");

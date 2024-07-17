@@ -333,6 +333,7 @@ dialog:not([open]) {
 
   .time-wrapper {
     margin-top: 12px;
+    max-height: 29.61px;
   }
 
   .time-button {
