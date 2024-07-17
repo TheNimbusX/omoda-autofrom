@@ -7,9 +7,8 @@
   <link rel="icon" href="./images/favicon.ico" sizes="any" />
   <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="./images/favicon.png" />
-  <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="/bower_components/owl.carousel/dist/assets/owl.carousel.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./fonts/fonts.css" />
   <link rel="stylesheet" href="./styles/globals.css" />
   <link rel="stylesheet" href="./styles/style.css" />
@@ -487,12 +486,14 @@
         </fieldset>
       </div>
 
-      <div class="section__complectations-select-wrapper">
+      <div class="section__complectations-select-wrapper ">
         <select class="select-complect" name="" id="sel" class="">
           <option value="C5" name="complectation" class="show-cards">C5</option>
           <option value="S5" name="complectation" class="show-cards2">S5</option>
           <option value="S5GT" name="complectation" class="show-cards3">S5GT</option>
         </select>
+
+
       </div>
       
         
@@ -764,48 +765,20 @@
         выгода до 380 000 ₽ <br />
         по программе trade-in
       </h3>
-      <div class="select-wrapper">
-        <button type="button" class="select-button" role="combobox" aria-label="select button" aria-haspopup="listbox"
-          aria-expanded="false" aria-controls="select-dropdown">
-          <span class="selected-value">Выберите марку</span>
-          <span class="arrow"></span>
-        </button>
-        <ul class="select-dropdown" role="listbox" id="select-dropdown">
-          <li role="option">
-            <input type="radio" id="bmw" name="car" />
-            <label for="bmw"><i class="bx bxl-bmw"></i>BMW</label>
-          </li>
-          <li role="option">
-            <input type="radio" id="audi" name="car" />
-            <label for="audi"><i class="bx bxl-audi"></i>Audi</label>
-          </li>
-          <li role="option">
-            <input type="radio" id="mercedes" name="car" />
-            <label for="mercedes"><i class="bx bxl-mercedes"></i>Mercedes</label>
-          </li>
-        </ul>
-      </div>
-      <div class="select-wrapper-model">
-        <button type="button" class="select-button-model" role="combobox-model" aria-label="select button"
-          aria-haspopup="listbox" aria-expanded="false" aria-controls="select-dropdown-model">
-          <span class="selected-value-model">Выберите модель</span>
-          <span class="arrow-model"></span>
-        </button>
-        <ul class="select-dropdown-model" role="listbox" id="select-dropdown-model">
-          <li role="option-model">
-            <input type="radio" id="m3" name="car-model" />
-            <label for="m3"><i class="bx bxl-m3"></i>M3</label>
-          </li>
-          <li role="option-model">
-            <input type="radio" id="m5" name="car-model" />
-            <label for="m5"><i class="bx bxl-m5"></i>M5</label>
-          </li>
-          <li role="option-model">
-            <input type="radio" id="m6" name="car-model" />
-            <label for="m6"><i class="bx bxl-m6"></i>M6</label>
-          </li>
-        </ul>
-      </div>
+      
+        <select class="js-example-basic-single" name="make">
+          <option value="al" class="select2-option">Выберите марку</option>
+          <option value="22" class="select2-option">omoda</option>
+          <option value="33" class="select2-option">chery</option>
+        </select>
+
+        <select class="js-example-basic-single2" name="model">
+          <option value="al2" class="select2-option">Выберите модель</option>
+          <option value="222" class="select2-option">c5</option>
+          <option value="333" class="select2-option">gtr</option>
+        </select>
+
+      
       <input type="number" name="year" id="year" placeholder="Год выпуска" min="1970" max="2024" class="input-number" />
       <input type="text" placeholder="Ваше имя" class="form-input input-text" />
       <input id="tel" type="tel" placeholder="+ 7 (_ _ _)___ __ __" class="form-input input-tel"
@@ -1053,10 +1026,10 @@
   </dialog>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   <script src="https://unpkg.com/imask"></script>
   <script src="./scripts/script.js"></script>
 </body>

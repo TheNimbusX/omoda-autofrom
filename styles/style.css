@@ -4452,7 +4452,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 }
 
 .mySwiper2 .swiper-wrapper .swiper-slide img {
-  max-height: 355px;
+  max-height: 365px;
   max-width: 518px;
   padding-top: 99px;
   cursor: grab;
@@ -4853,3 +4853,50 @@ iframe:nth-of-type(1) {
     height: 271px;
   }
 }
+
+
+/* select2 */
+
+
+.select2-container--default .select2-selection--single{
+  width: 100%;
+  max-width: 530px;
+  font-size: 18px;
+  background-color: transparent;
+  height: 50px;
+  padding-left: 13px;
+  padding-right: 18px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  outline: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: rgb(255, 255, 255);
+  padding: 0;
+}
+.select2-container--default .select2-selection--single::placeholder {
+  color: white;
+}
+
+.select2-option {
+  color: black;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b  {
+  background-image: url(../images/arrow.png);
+  background-color: transparent;
+  background-size: contain;
+  border: none !important;
+  height: 7px !important;
+  width: 13px !important;
+  margin: auto !important;
+  top: 35px !important;
+  left: -10.3px !important;
+}
+

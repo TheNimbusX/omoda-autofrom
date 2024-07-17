@@ -1,118 +1,3 @@
-////////////////////////////////////////////// функция для кастомного селекта
-const customSelect = document.querySelector(".select-wrapper");
-const selectBtn = document.querySelector(".select-button");
-
-const selectedValue = document.querySelector(".selected-value");
-const optionsList = document.querySelectorAll(".select-dropdown li");
-
-// добавляем клик event на кнопку select button
-selectBtn.addEventListener("click", () => {
-  // добавление\удаление active class
-  customSelect.classList.toggle("active");
-  // обновление атрибура aria-expanded based в текущем состоянии
-  selectBtn.setAttribute(
-    "aria-expanded",
-    selectBtn.getAttribute("aria-expanded") === "true" ? "false" : "true"
-  );
-});
-
-optionsList.forEach((option) => {
-  function handler(e) {
-    // клик ивенты
-    if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
-      selectedValue.textContent = this.children[1].textContent;
-      customSelect.classList.remove("active");
-    }
-    // ключ ивенты
-    if (e.key === "Enter") {
-      selectedValue.textContent = this.textContent;
-      customSelect.classList.remove("active");
-    }
-  }
-
-  option.addEventListener("keyup", handler);
-  option.addEventListener("click", handler);
-});
-
-const customSelectModel = document.querySelector(".select-wrapper-model");
-const selectBtnModel = document.querySelector(".select-button-model");
-
-const selectedValueModel = document.querySelector(".selected-value-model");
-const optionsListModel = document.querySelectorAll(".select-dropdown-model li");
-
-// добавляем клик event на кнопку select button
-selectBtnModel.addEventListener("click", () => {
-  // добавление\удаление active class
-  customSelectModel.classList.toggle("active");
-  // обновление атрибура aria-expanded based в текущем состоянии
-  selectBtnModel.setAttribute(
-    "aria-expanded",
-    selectBtnModel.getAttribute("aria-expanded") === "true" ? "false" : "true"
-  );
-});
-
-optionsListModel.forEach((option) => {
-  function handler(e) {
-    // клик ивенты
-    if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
-      selectedValueModel.textContent = this.children[1].textContent;
-      customSelectModel.classList.remove("active");
-    }
-    // ключ ивенты
-    if (e.key === "Enter") {
-      selectedValueModel.textContent = this.textContent;
-      customSelectModel.classList.remove("active");
-    }
-  }
-
-  option.addEventListener("keyup", handler);
-  option.addEventListener("click", handler);
-});
-
-const customSelectComplectations = document.querySelector(
-  ".section__complectations-select-wrapper"
-);
-const selectBtnComplectations = document.querySelector(
-  ".section__complectations-select-button"
-);
-
-const selectedValueComplectations = document.querySelector(
-  ".section__complectations-selected-value"
-);
-const optionsListComplectations = document.querySelectorAll(
-  ".section__complectations-select-dropdown li"
-);
-
-// добавляем клик event на кнопку select button
-selectBtnComplectations.addEventListener("click", () => {
-  // добавление\удаление active class
-  customSelectComplectations.classList.toggle("active");
-  // обновление атрибура aria-expanded based в текущем состоянии
-  selectBtnComplectations.setAttribute(
-    "aria-expanded",
-    selectBtnComplectations.getAttribute("aria-expanded") === "true"
-      ? "false"
-      : "true"
-  );
-});
-
-optionsListComplectations.forEach((option) => {
-  function handler(e) {
-    // клик ивенты
-    if (e.type === "click" && e.clientX !== 0 && e.clientY !== 0) {
-      selectedValueComplectations.textContent = this.children[1].textContent;
-      customSelectComplectations.classList.remove("active");
-    }
-    // ключ ивенты
-    if (e.key === "Enter") {
-      selectedValueComplectations.textContent = this.textContent;
-      customSelectComplectations.classList.remove("active");
-    }
-  }
-
-  option.addEventListener("keyup", handler);
-  option.addEventListener("click", handler);
-});
 
 ////////////////////////////////////////////// таймер
 let days = document.getElementById("days");
@@ -439,4 +324,16 @@ document.getElementById('sel').addEventListener('change', function(){
         document.getElementById('complect-card-8').style.display = 'block';
         document.getElementById('complect-card-9').style.display = 'block';
       }  
+});
+
+
+/////////////////////////////////////////// select2 lib 
+
+
+$(document).ready(function() {
+  $('.js-example-basic-single').select2();
+});
+
+$(document).ready(function() {
+  $('.js-example-basic-single2').select2();
 });
