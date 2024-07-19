@@ -1778,6 +1778,10 @@ input[type="number"] {
     text-align: center;
   }
 
+  .header__banner-sale::after {
+    left: -40%;
+  }
+
   .header__timer {
     display: grid;
     grid-template-columns: 1fr 3fr;
